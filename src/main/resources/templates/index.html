@@ -1,94 +1,91 @@
 <!DOCTYPE html>
 
 <html xmlns:th="http://www.thymeleaf.org"
-
-      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
 
 <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <link rel="stylesheet" type="text/css"
-
-          th:href="@{/webjars/bootstrap/3.3.7/css/bootstrap.min.css}" />
-    <title>Registration</title>
+<link rel="stylesheet" type="text/css"
+	th:href="@{/webjars/bootstrap/3.3.7/css/bootstrap.min.css}" />
+<title>Registration</title>
 
 </head>
 
 <body>
 
-<nav class="navbar navbar-inverse navbar-fixed-top">
+	<nav class="navbar navbar-inverse navbar-fixed-top">
 
-    <div class="container">
+		<div class="container">
 
-        <div class="navbar-header">
+			<div class="navbar-header">
 
-            <button type="button" class="navbar-toggle collapsed"
+				<button type="button" class="navbar-toggle collapsed"
+					data-toggle="collapse" data-target="#navbar" aria-expanded="false"
+					aria-controls="navbar">
 
-                    data-toggle="collapse" data-target="#navbar" aria-expanded="false"
+					<span class="sr-only">Toggle navigation</span> <span
+						class="icon-bar"></span> <span class="icon-bar"></span> <span
+						class="icon-bar"></span>
 
-                    aria-controls="navbar">
+				</button>
 
-                <span class="sr-only">Toggle navigation</span> <span
+				<a class="navbar-brand" href="#" th:href="@{/}">Registration and
 
-                    class="icon-bar"></span> <span class="icon-bar"></span> <span
+					Login Module</a>
 
-                    class="icon-bar"></span>
+			</div>
 
-            </button>
+			<div id="navbar" class="collapse navbar-collapse">
 
-            <a class="navbar-brand" href="#" th:href="@{/}">Registration and
+				<ul class="nav navbar-nav">
 
-                Login Module</a>
+					<li sec:authorize="isAuthenticated()"><a th:href="@{/logout}">Logout</a></li>
 
-        </div>
+				</ul>
 
-        <div id="navbar" class="collapse navbar-collapse">
+			</div>
 
-            <ul class="nav navbar-nav">
+		</div>
 
-                <li sec:authorize="isAuthenticated()"><a th:href="@{/logout}">Logout</a></li>
-
-            </ul>
-
-        </div>
-
-    </div>
-
-</nav>
+	</nav>
 
 
 
+	<br>
+
+	<br>
+
+	<div class="container">
+		<br>
+		<div>
+			<div></div>
+			<a class="navbar-brand" href="#" th:href="@{/git}">Acessar
+				Consulta</a>
+		</div>
 <br>
-
 <br>
+<br>
+	<br>
+	<br>
+	<br>
+		<p>
 
-<div class="container">
+			Welcome <span sec:authentication="principal.username">User</span>
 
-    <h2>User Registration and Login Module using Spring Boot, Spring
+		</p>
 
-        MVC, Spring Security, JPA/Hibernate and Thymeleaf</h2>
-
-
-
-    <p>
-
-        Welcome <span sec:authentication="principal.username">User</span>
-
-    </p>
-
-</div>
+	</div>
 
 
 
-<script type="text/javascript"
+	<script type="text/javascript"
+		th:src="@{/webjars/jquery/3.2.1/jquery.min.js/}"></script>
 
-        th:src="@{/webjars/jquery/3.2.1/jquery.min.js/}"></script>
-
-<script type="text/javascript"
-
-        th:src="@{/webjars/bootstrap/3.3.7/js/bootstrap.min.js}"></script>
+	<script type="text/javascript"
+		th:src="@{/webjars/bootstrap/3.3.7/js/bootstrap.min.js}"></script>
 
 
 

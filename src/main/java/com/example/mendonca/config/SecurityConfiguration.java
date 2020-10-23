@@ -32,7 +32,9 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                 "/js/**",
                 "/css/**",
                 "/img/**",
-                "/webjars/**").permitAll()
+                "/webjars/**",
+                "/git/**",
+                "/github-users/**").permitAll()
             .anyRequest().authenticated()
             .and()
             .formLogin()
