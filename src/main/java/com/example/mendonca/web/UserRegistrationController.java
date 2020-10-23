@@ -45,10 +45,9 @@ public class UserRegistrationController {
         }
 
         userService.save(userDto);
-        return "redirect:/git";
+        return "redirect:/registration?sucess";
     }
-    
-    
-    
+
+  
 
 }

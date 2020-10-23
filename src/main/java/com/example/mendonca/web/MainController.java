@@ -21,6 +21,5 @@ public  class  MainController {
 	    public String userIndex(){
 	        return "user/index";
 	    }
-
 	    
 }
