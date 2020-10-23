@@ -1,8 +1,5 @@
 package com.example.mendonca.web.dto;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-
-@JsonIgnoreProperties(ignoreUnknown = true)
 public class GitDto{
 	
 	private Long id;

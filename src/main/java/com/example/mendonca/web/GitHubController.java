@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
 
-import com.example.mendonca.entity.GitHub;
+import com.example.mendonca.web.dto.GitDto;
 
 @RestController
 public class GitHubController {
@@ -16,14 +16,14 @@ public class GitHubController {
   
 
     @GetMapping("/git")
-    public ResponseEntity<GitHub[]> getGithubUsers() {
- 	   ResponseEntity<GitHub[]> response =
+    public ResponseEntity<GitDto[]> getGithubUsers() {
+ 	   ResponseEntity<GitDto[]> response =
  			   restTemplate.getForEntity(
  			   "https://api.github.com/users?since>500" ,
- 			   GitHub[].class);
- 	   System.out.println(GitHub[].class.toString());
- 	   GitHub[] gitHubUsers = response.getBody();
- 	   return new ResponseEntity<GitHub[]>(gitHubUsers, HttpStatus.CREATED);
+ 			  GitDto[].class);
+ 	   System.out.println(GitDto[].class.toString());
+ 	  GitDto[] gitHubUsers = response.getBody();
+ 	   return new ResponseEntity<GitDto[]>(gitHubUsers, HttpStatus.CREATED);
     }	
   
    
